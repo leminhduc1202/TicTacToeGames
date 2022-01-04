@@ -36,11 +36,11 @@ class MainActivity : AppCompatActivity() {
             for (j in board.board.indices) {
                 when (board.board[i][j]) {
                     Board.PLAYER -> {
-                        boardCells[i][j]?.setImageResource(R.drawable.circle)
+                        boardCells[i][j]?.setImageResource(R.drawable.ic_o)
                         boardCells[i][j]?.isEnabled = false
                     }
                     Board.COMPUTER -> {
-                        boardCells[i][j]?.setImageResource(R.drawable.cross)
+                        boardCells[i][j]?.setImageResource(R.drawable.ic_x)
                         boardCells[i][j]?.isEnabled = false
                     }
                     else -> {
@@ -70,9 +70,9 @@ class MainActivity : AppCompatActivity() {
                 mapBoardToUi()
             }
             when {
-                board.hasComputerWon() -> binding.tvResult.text = "Computer Won"
-                board.hasPlayerWon() -> binding.tvResult.text = "Player Won"
-                board.isGameOver -> binding.tvResult.text = "Game Tied"
+                board.hasComputerWon() -> binding.tvResult.text = getString(R.string.computer_won)
+                board.hasPlayerWon() -> binding.tvResult.text = getString(R.string.you_won)
+                board.isGameOver -> binding.tvResult.text = getString(R.string.game_draw)
             }
         }
     }
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
                     leftMargin = 5
                     rightMargin = 5
                 }
-                boardCells[i][j]?.setBackgroundColor(ContextCompat.getColor(this, R.color.teal_200))
+                boardCells[i][j]?.setBackgroundColor(ContextCompat.getColor(this, R.color.primrose))
                 binding.glBoard.addView(boardCells[i][j])
                 boardCells[i][j]?.setOnClickListener(CellClickListener(i, j))
             }

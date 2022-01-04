@@ -3,25 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/wisteria">
 
     <ImageView
-        android:background="@drawable/app_name"
         android:id="@+id/img_view_name"
-        android:layout_width="280dp"
-        android:layout_height="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_header" />
 
     <TextView
-        android:layout_marginBottom="25dp"
         android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/gl_board"
         android:layout_centerHorizontal="true"
-        android:text="Can't you win Computer"
+        android:layout_marginBottom="25dp"
+        android:fontFamily="@font/rock_salt"
+        android:text="@string/main_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textSize="30sp" />
 
@@ -37,12 +39,16 @@
         android:useDefaultMargins="true" />
 
     <Button
+        android:textColor="@color/wisteria"
+        android:backgroundTint="@color/primrose"
         android:id="@+id/bt_restart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Restart"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/rock_salt"
+        android:text="@string/restart"
         android:textAllCaps="false" />
 
 </RelativeLayout>
