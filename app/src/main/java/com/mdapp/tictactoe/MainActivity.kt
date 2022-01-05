@@ -1,11 +1,13 @@
 package com.mdapp.tictactoe
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.GridLayout
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.google.android.gms.ads.*
 import com.mdapp.tictactoe.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,10 +16,45 @@ class MainActivity : AppCompatActivity() {
     private val boardCells = Array(3) { arrayOfNulls<ImageView>(3) }
     var board = Board()
 
+    lateinit var mAdView: AdView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        MobileAds.initialize(this){}
+        mAdView = binding.adviewBanner
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+        mAdView.adListener = object : AdListener(){
+            override fun onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+                Log.d("====", "onAdLoaded")
+            }
+
+            override fun onAdFailedToLoad(adError : LoadAdError) {
+                // Code to be executed when an ad request fails.
+                Log.d("====", adError.message)
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+                Log.d("====", "onAdOpened")
+            }
+
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+                Log.d("====", "onAdClicked")
+            }
+
+            override fun onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+                Log.d("====", "onAdClosed")
+            }
+        }
 
         loadBoard()
 

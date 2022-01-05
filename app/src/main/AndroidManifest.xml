@@ -9,6 +9,9 @@
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToe">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_id"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/wisteria">
+    android:background="@color/wisteria"
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/img_view_name"
@@ -16,8 +16,6 @@
         android:background="@drawable/bg_header" />
 
     <TextView
-        android:textAlignment="center"
-        android:textColor="@color/primrose"
         android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,7 +24,9 @@
         android:layout_marginBottom="25dp"
         android:fontFamily="@font/rock_salt"
         android:text="@string/main_title"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/primrose"
         android:textSize="30sp" />
 
     <GridLayout
@@ -40,17 +40,31 @@
         android:rowCount="3"
         android:useDefaultMargins="true" />
 
-    <Button
-        android:textColor="@color/wisteria"
-        android:backgroundTint="@color/primrose"
-        android:id="@+id/bt_restart"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:fontFamily="@font/rock_salt"
-        android:text="@string/restart"
-        android:textAllCaps="false" />
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_restart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/primrose"
+            android:fontFamily="@font/rock_salt"
+            android:text="@string/restart"
+            android:textAllCaps="false"
+            android:textColor="@color/wisteria" />
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adview_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/admob_banner" >
+
+        </com.google.android.gms.ads.AdView>
+    </LinearLayout>
 
 </RelativeLayout>
