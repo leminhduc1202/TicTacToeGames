@@ -3,6 +3,7 @@ package com.mdapp.tictactoe
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.GridLayout
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -121,8 +122,8 @@ class MainActivity : AppCompatActivity() {
                 boardCells[i][j]?.layoutParams = GridLayout.LayoutParams().apply {
                     rowSpec = GridLayout.spec(i)
                     columnSpec = GridLayout.spec(j)
-                    width = 250
-                    height = 230
+                    width = 210
+                    height = 210
                     bottomMargin = 5
                     topMargin = 5
                     leftMargin = 5

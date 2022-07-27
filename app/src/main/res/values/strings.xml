@@ -9,5 +9,6 @@
     <string name="admob_id">ca-app-pub-4477880561754258~1987948095</string>
     <string name="admob_banner">ca-app-pub-4477880561754258/8571993155</string>
     <string name="admob_banner_test">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_banner_new">ca-app-pub-4477880561754258/7799950778</string>
 
 </resources>
